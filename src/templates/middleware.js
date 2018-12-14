@@ -34,6 +34,7 @@ middleware['i18n'] = async ({ app, req, res, route, store, redirect, isHMR }) =>
   // Handle browser language detection
   const detectBrowserLanguage = <%= JSON.stringify(options.detectBrowserLanguage) %>
   const routeLocale = getLocaleFromRoute(route, routesNameSeparator, locales)
+  const { useCookie, cookieKey, alwaysRedirect, fallbackLocale, cookieDomain, cookiePath } = detectBrowserLanguage
 
   const getCookie = () => {
     if (isSpa) {
@@ -49,17 +50,20 @@ middleware['i18n'] = async ({ app, req, res, route, store, redirect, isHMR }) =>
     const date = new Date()
     if (isSpa) {
       Cookies.set(cookieKey, locale, {
-        expires: new Date(date.setDate(date.getDate() + 365))
+        expires: new Date(date.setDate(date.getDate() + 365)),
+        domain: cookieDomain,
+        path: cookiePath
       })
     } else if (res) {
       const redirectCookie = cookie.serialize(cookieKey, locale, {
-        expires: new Date(date.setDate(date.getDate() + 365))
+        expires: new Date(date.setDate(date.getDate() + 365)),
+        domain: cookieDomain,
+        path: cookiePath
       })
       res.setHeader('Set-Cookie', redirectCookie)
     }
   }
 
-  const { useCookie, cookieKey, alwaysRedirect, fallbackLocale } = detectBrowserLanguage
 
   const switchLocale = async (newLocale) => {
     // Abort if different domains option enabled

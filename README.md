@@ -5,7 +5,6 @@
 <a href="https://nuxt-community.github.io/nuxt-i18n/">Documentation</a> | <a href="./CHANGELOG.md">Release notes</a>
 </p>
 
-
 <p align="center">
 <a href="https://david-dm.org/nuxt-community/nuxt-i18n">
     <img alt="" src="https://david-dm.org/nuxt-community/nuxt-i18n/status.svg?style=flat-square">
@@ -28,6 +27,10 @@
     <img alt="" src="https://img.shields.io/npm/dt/nuxt-i18n.svg?style=flat-square">
 </a>
 </p>
+
+<h2 align="center">Difference between original!</h2>
+ - Change cookie value from index of locale to 2-letter code language
+ - Add opportunity to specify cookie domain
 
 <h2 align="center">Co-maintainers welcome!</h2>
 
@@ -54,9 +57,12 @@ git clone git@github.com:<username>/nuxt-i18n.git modules/nuxt-i18n
 
 {
   modules: [
-    ['./modules/nuxt-i18n', {
-      // options...
-    }]
+    [
+      './modules/nuxt-i18n',
+      {
+        // options...
+      }
+    ]
   ]
 }
 ```
@@ -107,7 +113,6 @@ yarn docs:dev
 ## Issues, questions & requests
 
 Please use [CMTY](https://cmty.app/nuxt/nuxt-i18n/issues) for any question you might have.
-
 
 ## License
 

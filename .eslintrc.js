@@ -8,7 +8,10 @@ module.exports = {
     node: true,
     jest: true
   },
-  extends: 'standard',
+  extends: [
+    'standard',
+    'plugin:lodash-template/recommended-with-html'
+  ],
   plugins: [
     'jest',
     'vue'

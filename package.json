@@ -5,16 +5,13 @@
   "license": "MIT",
   "contributors": [
     {
-      "name": "Paul Gascou-Vaillancourt (@paulgv)"
+      "name": "Roman Zorkov (@romikzo)"
     }
   ],
   "main": "src/index.js",
   "types": "types/index.d.ts",
-  "repository": "https://github.com/nuxt-community/nuxt-i18n",
-  "homepage": "https://nuxt-community.github.io/nuxt-i18n/",
-  "bugs": {
-    "url": "https://nuxtjs.cmty.io/nuxt-community/nuxt-i18n/issues"
-  },
+  "repository": "https://github.com/romikzo/nuxt-i18n",
+  "homepage": "https://github.com/romikzo/nuxt-i18n",
   "publishConfig": {
     "access": "public"
   },
